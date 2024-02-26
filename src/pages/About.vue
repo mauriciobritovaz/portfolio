@@ -3,7 +3,7 @@ const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST 
 </script>
 <template>
 	<div class="grid grid-cols-10 text-begezito-6 font-raleway">
-		<section class="col-span-4 col-start-4 mt-10">
+		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10">
 			<div class="text-4xl font-bold border-b-2 border-begezito-6 p-2">
 				<span>About me</span>
 			</div>
@@ -14,7 +14,7 @@ const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST 
 				<span class="mb-4">But even my passion with front end, I've been working with other stacks and techonologies. I have worked with PHP, C++, .Net and more. </span>
 			</div>
 		</section>
-		<section class="col-span-4 col-start-4 mt-6">
+		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
 			<div class="text-4xl font-bold border-b-2 border-begezito-6 p-2">
 				<span>My skills</span>
 			</div>
@@ -26,7 +26,7 @@ const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST 
 				</span>
 			</div>
 		</section>
-		<section class="col-span-4 col-start-4 mt-6">
+		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
 			<div class="text-4xl font-bold border-b-2 border-begezito-6 p-2">
 				<span>About this website</span>
 			</div>

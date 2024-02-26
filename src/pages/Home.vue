@@ -1,11 +1,11 @@
 <script setup></script>
 <template>
-	<div class="grid grid-cols-8 text-begezito-6 font-raleway mt-64">
-		<div class="col-span-4 col-start-3 text-center">
-			<span class="text-7xl font-bold">Hey there, I'm Maurício!</span>
+	<div class="grid grid-cols-8 text-begezito-6 font-raleway mt-40 lg:mt-64">
+		<div class="col-span-6 col-start-2 md:col-span-4 md:col-start-3 text-center text-4xl xl:text-7xl font-bold">
+			<span>Hey there, I'm Maurício!</span>
 		</div>
-		<div class="col-span-4 col-start-3 mt-14 text-2xl text-center">
-			<span class="mb-4 block">I'm a front-end web developer who's trying to become greater(in overall). </span>
+		<div class="block md:flex col-span-6 col-start-2 md:col-span-4 md:col-start-3 mt-6 md:mt-10 xl:mt-14 text-lg md:text-2xl text-center">
+			<span>I'm a front-end web developer who's trying to become greater(in overall). </span>
 		</div>
 	</div>
 </template>
