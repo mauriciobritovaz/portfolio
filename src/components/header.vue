@@ -34,7 +34,7 @@ const openMenu = () => {
         </svg>
       </div>
     </div>
-    <nav :class="isOpen ? 'block' : 'hidden'" class="md:flex md:visible">
+    <nav :class="isOpen ? 'block' : 'hidden'" class="md:flex md:visible md:pr-10 lg:pr-20 2xl:pr-96">
       <router-link
         v-for="link in links"
         class="flex md:mx-2 py-3 px-5"

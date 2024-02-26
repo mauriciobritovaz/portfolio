@@ -2,8 +2,8 @@
 const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST API', 'JSON', 'PHP', 'CSS', 'SASS', 'TailwindCSS', 'Responsive Design', 'GIT', 'GitHub']
 </script>
 <template>
-	<div class="grid grid-cols-10 text-begezito-6 font-raleway">
-		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10">
+	<div class="grid grid-cols-10 text-begezito-6 font-raleway mt-20 lg:mt-20 xl:mt-10">
+		<section class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10">
 			<div class="text-4xl font-bold border-b-2 border-begezito-6 p-2">
 				<span>About me</span>
 			</div>
