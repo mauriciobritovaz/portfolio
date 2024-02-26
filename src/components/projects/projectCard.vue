@@ -14,11 +14,11 @@ const props = defineProps({
       <div class="flex text-lg font-bold">
         <span>{{ title }}</span>
       </div>
-      <div class="grid grid-cols-6 gap-1 px-1 text-center">
+      <div class="grid grid-cols-2 lg:grid-cols-6 gap-1 px-1 text-center">
         <a
           :href="demoLink"
           target="_blank"
-          class="col-start-5">
+          class="lg:col-start-5">
           Demo
         </a>
         <a
