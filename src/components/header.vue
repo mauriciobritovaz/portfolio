@@ -16,7 +16,7 @@ let links = [
   },
 ]
 
-const isOpen = ref(true)
+const isOpen = ref(false)
 
 const openMenu = () => {
   isOpen.value = !isOpen.value
@@ -34,10 +34,10 @@ const openMenu = () => {
         </svg>
       </div>
     </div>
-    <nav :class="isOpen ? 'block' : 'hidden'" class="md:flex md:visible md:pr-10 lg:pr-20 2xl:pr-96">
+    <nav :class="isOpen ? 'block' : 'hidden'" class="uppercase md:flex md:visible md:pr-10 lg:pr-20 2xl:pr-80">
       <router-link
         v-for="link in links"
-        class="flex md:mx-2 py-3 px-5"
+        class="flex mx-1 px-2 lg:mx-2 py-3 lg:px-5"
         :to="link.path"
         active-class="text-begezito-6 border-r-4 bg-begezito-4 md:bg-begezito-3 md:border-b-4 md:border-r-0 border-begezito-5">
         {{ link.name }}

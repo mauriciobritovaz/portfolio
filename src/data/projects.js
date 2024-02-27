@@ -5,7 +5,7 @@ export const projects = [
 		date:'2024',
 		stacks: ['vue 3', 'javascript', 'tailwindcss'],
     demoUrl: '',
-    sourceUrl: 'https://github.com/mauriciobritovaz'
+    sourceUrl: 'https://github.com/mauriciobritovaz/portfolio'
   },
   {
     title: 'Project 2',
