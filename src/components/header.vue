@@ -14,6 +14,10 @@ let links = [
     name: 'My projects',
     path: '/projects'
   },
+  {
+    name: 'Contact me',
+    path: '/contact'
+  },
 ]
 
 const isOpen = ref(false)
