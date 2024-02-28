@@ -1,7 +1,9 @@
 <script setup>
-import { ref } from 'vue'
-
-let links = [
+import { ref, onBeforeMount } from 'vue'
+ /* DATA */
+const isOpen = ref(false)
+const isTop = ref(true)
+const links = [
   {
     name: 'Home',
     path: '/'
@@ -20,15 +22,31 @@ let links = [
   },
 ]
 
-const isOpen = ref(false)
-
+/* METHODS */
 const openMenu = () => {
   isOpen.value = !isOpen.value
 }
+
+const  handleScroll = () => {
+  if(window.scrollY > 0 ){
+    if(isTop.value)
+      isTop.value = false
+  } else {
+    if(!isTop.value)
+      isTop.value = true
+  }
+}
+
+/* LIFECYCLE */
+onBeforeMount(() =>{
+  window.addEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
-  <header class="bg-begezito-3 bg-opacity-85 backdrop-blur-sm text-begezito-6 font-raleway fixed w-full top-0 z-50 md:flex md:justify-between">
+  <header
+    :class="{'shadow-md': !isTop}"
+    class="bg-begezito-3 bg-opacity-85 backdrop-blur-sm text-begezito-6 font-raleway fixed w-full top-0 z-50 md:flex md:justify-between">
     <div class="px-5 md:px-10 lg:px-20 2xl:px-96 flex justify-between align-middle">
       <div class="text-2xl font-semibold text-begezito-6 py-3">Maurício Brito Vaz</div>
       <div class="md:hidden py-3" @click="openMenu">
