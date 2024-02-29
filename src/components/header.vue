@@ -51,17 +51,22 @@ onBeforeMount(() =>{
 
 <template>
   <header
-    :class="{'shadow-md bg-gray-300 bg-opacity-85 backdrop-blur-sm text-gray-900': !isTop}"
-    class="font-raleway fixed w-full top-0 z-50 md:flex md:justify-between">
-    <div class="w-full px-5 md:px-10 lg:px-20 2xl:px-96 flex justify-between align-middle py-3">
-      <div class="text-2xl font-semibold">Maurício Brito Vaz</div>
-      <nav class="flex justify-end align-middle">
-        <div class="hidden md:flex md:justify-between uppercase">
+    :class="{'shadow-md bg-gray-300 bg-opacity-85 backdrop-blur-sm': !isTop}"
+    class="font-inter text-gray-800 fixed w-full top-0 z-50 md:flex md:justify-between">
+    <div class="w-full px-5 md:px-10 lg:px-20 2xl:px-60 flex justify-between">
+      <div class="flex items-center py-3">
+        <span class="rounded-full bg-orange-600 text-gray-200 flex justify-center items-center text-center p-5 h-12 w-12 text-2xl font-bold">M</span>
+        <span class="text-lg lg:text-2xl font-semibold ml-3">
+          Maurício Brito Vaz
+        </span>
+      </div>
+      <nav class="flex justify-end items-center">
+        <div class="hidden md:flex md:justify-between uppercase font-semibold">
           <router-link
             v-for="link in links"
             :to="link.path"
-            class="px-3"
-            active-class="text-orange-600 border-b-2 border-orange-600">
+            class="px-3 md:text-sm xl:text-base"
+            active-class="text-orange-600">
             {{ link.name }}
           </router-link>
         </div>

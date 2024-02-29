@@ -4,7 +4,7 @@ import footerComponent from './components/footer.vue';
 </script>
 
 <template>
-  <div class="bg-fixed bg-gradient-to-b from-gray-200 to-gray-300 flex flex-col h-full min-h-dvh">
+  <div class="bg-fixed bg-gradient-to-b from-gray-300 to-gray-400 flex flex-col h-full min-h-dvh">
     <headerComponent />
     <div class="flex-grow">
       <router-view />
