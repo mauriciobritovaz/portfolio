@@ -6,8 +6,8 @@ import { projects } from '@/data/projects';
 </script>
 <template>
 	<div class="grid  grid-cols-10 mt-20 lg:mt-20 xl:mt-10">
-		<div class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10 border-b-2 border-begezito-6 p-2">
-			<span class="text-4xl text-begezito-6 font-raleway font-bold">My Projects</span>
+		<div class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10 border-b-2 border-gray-800 dark:border-gray-300 p-2">
+			<span class="text-4xl text-gray-900 dark:text-gray-300 font-inter font-bold">My Projects</span>
 		</div>
 		<div class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
 			<div v-for="project in projects" class="my-5">

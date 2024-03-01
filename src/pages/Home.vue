@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-	<div class="grid grid-cols-8 text-gray-800 font-raleway mt-40 lg:mt-64">
+	<div class="grid grid-cols-8 text-gray-800 dark:text-gray-300 font-raleway mt-40 lg:mt-64">
 		<div class="col-span-6 col-start-2 md:col-span-4 md:col-start-3 text-center text-4xl xl:text-7xl font-bold">
 			<span>Hey there, I'm Maurício!</span>
 		</div>

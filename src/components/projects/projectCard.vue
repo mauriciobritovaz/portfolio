@@ -9,12 +9,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="flex flex-col rounded-md shadow-md bg-begezito-4 p-2 font-raleway text-begezito-6">
-    <div class="flex justify-between border-b-2 border-begezito-6">
+  <div class="flex flex-col shadow-md bg-gray-400 font-inter text-gray-900">
+    <div class="flex justify-between bg-gray-800 text-orange-600 px-2 items-center">
       <div class="flex text-lg font-bold">
         <span>{{ title }}</span>
       </div>
-      <div class="grid grid-cols-2 lg:grid-cols-6 gap-1 px-1 text-center">
+      <div class="grid grid-cols-2 lg:grid-cols-6 gap-1 px-1 text-center font-semibold">
         <a
           :href="demoLink"
           target="_blank"
@@ -29,11 +29,11 @@ const props = defineProps({
         </a>
       </div>
     </div>
-    <div class="text-md my-1 p-1 text-justify">
+    <div class="text-md my-1 p-2 text-justify">
       {{ about }}
     </div>
-    <div class="flex flex-wrap">
-      <span v-for="stack in stacks" class="py-1 px-3 m-0.5 rounded-full text-xs text-begezito-1 bg-begezito-6">{{ stack }}</span>
+    <div class="flex flex-wrap p-2">
+      <span v-for="stack in stacks" class="py-1 px-3 m-0.5 font-raleway border-orange-600 border-1 text-xs lg:text-sm text-orange-600 bg-gray-800">{{ stack }}</span>
     </div>
   </div>
 </template>

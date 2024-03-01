@@ -3,7 +3,7 @@ export const projects = [
     title: 'My Portfolio',
 		about: 'The source of this website',
 		date:'2024',
-		stacks: ['vue 3', 'javascript', 'tailwindcss'],
+		stacks: ['vue 3', 'javascript', 'tailwindcss', 'pinia', 'vite'],
     demoUrl: '',
     sourceUrl: 'https://github.com/mauriciobritovaz/portfolio'
   },

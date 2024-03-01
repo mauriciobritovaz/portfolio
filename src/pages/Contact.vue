@@ -60,9 +60,9 @@ const validateForm = () =>{
 </script>
 
 <template>
-  <div class="grid grid-cols-10 text-begezito-6 font-raleway mt-20 lg:mt-20 xl:mt-10">
+  <div class="grid grid-cols-10 text-gray-900 dark:text-gray-300 font-inter mt-20 xl:mt-10">
     <section class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10">
-      <div class="text-4xl font-bold border-b-2 border-begezito-6 p-2">
+      <div class="text-4xl font-bold border-b-2 border-gray-800 dark:border-gray-300 p-2">
 				<span>Contact me</span>
 			</div>
       <div class="text-lg mt-4">
@@ -71,7 +71,7 @@ const validateForm = () =>{
     </section>
     <section class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 mt-4">
       <form
-        class="bg-begezito-4 shadow-md p-4 rounded-md"
+        class="bg-gray-400 shadow-md p-4"
         @submit.prevent="submitContact">
         <div class="flex flex-col mb-4">
           <input
@@ -79,7 +79,7 @@ const validateForm = () =>{
             id="name"
             placeholder="Name"
             type="text"
-            class="bg-begezito-5 text-begezito-7 placeholder:text-begezito-6 placeholder:font-semibold focus:outline-none rounded-md p-2"
+            class="bg-gray-500 text-gray-900 placeholder:text-gray-800 placeholder:font-semibold focus:outline-none p-2"
           />
         </div>
         <div class="flex flex-col mb-4">
@@ -88,7 +88,7 @@ const validateForm = () =>{
             id="email"
             type="email"
             placeholder="E-mail"
-            class="bg-begezito-5 text-begezito-7 placeholder:text-begezito-6 placeholder:font-semibold focus:outline-none rounded-md p-2"
+            class="bg-gray-500 text-gray-900 placeholder:text-gray-800 placeholder:font-semibold focus:outline-none p-2"
           />
         </div>
         <div class="flex flex-col mb-4">
@@ -98,13 +98,13 @@ const validateForm = () =>{
             placeholder="Message"
             cols="50"
             rows="5"
-            class="bg-begezito-5 text-begezito-7 placeholder:text-begezito-6 placeholder:font-semibold focus:outline-none rounded-md p-2 resize-none"
+            class="bg-gray-500 text-gray-900 placeholder:text-gray-800 placeholder:font-semibold focus:outline-none p-2 resize-none"
           ></textarea>
         </div>
         <div class="flex justify-end">
           <button
             type="submit"
-            class="bg-begezito-5 rounded-md py-2 px-4 text-lg uppercase font-semibold focus:shadow-sm focus:shadow-begezito-6 focus:outline-none">
+            class="bg-gray-400 py-2 px-4 text-lg uppercase font-semibold border-2 border-gray-800 text-gray-900 focus:outline-none">
             Submit
           </button>
         </div>

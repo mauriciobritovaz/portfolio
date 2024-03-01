@@ -2,9 +2,9 @@
 const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST API', 'JSON', 'PHP', 'CSS', 'SASS', 'TailwindCSS', 'Responsive Design', 'GIT', 'GitHub']
 </script>
 <template>
-	<div class="grid grid-cols-10 text-gray-800 font-inter mt-20 lg:mt-20 xl:mt-10">
+	<div class="grid grid-cols-10 text-gray-900 dark:text-gray-300 font-inter mt-20 xl:mt-10">
 		<section class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4 xl:mt-10">
-			<div class="text-4xl font-bold border-b-2 border-gray-800 p-2">
+			<div class="text-4xl font-bold border-b-2 border-gray-800 dark:border-gray-300 p-2">
 				<span>About me</span>
 			</div>
 			<div class="flex flex-col text-lg mt-4">
@@ -15,19 +15,19 @@ const skills = ['HTML', 'JavaScript', 'Vue', 'React', 'GraphQL', 'MySQL', 'REST 
 			</div>
 		</section>
 		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
-			<div class="text-4xl font-bold border-b-2 border-gray-800 p-2">
+			<div class="text-4xl font-bold border-b-2 border-gray-800 dark:border-gray-300 p-2">
 				<span>My skills</span>
 			</div>
 			<div class="flex flex-wrap text-lg mt-4">
 				<span
 					v-for="skill in skills"
-					class="py-1 px-3 mx-0.5 mb-3 text-lg text-orange-600 bg-gray-800 font-raleway border-orange-600 border-1 border-double">
+					class="py-1 px-3 mx-0.5 mb-3 text-lg text-orange-600 bg-gray-800 font-raleway border-orange-600 border-1">
 					{{ skill }}
 				</span>
 			</div>
 		</section>
 		<section class="col-span-8 col-start-2 mt-6 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
-			<div class="text-4xl font-bold border-b-2 border-gray-800 p-2">
+			<div class="text-4xl font-bold border-b-2 border-gray-800 dark:border-gray-300 p-2">
 				<span>About this website</span>
 			</div>
 			<div class="text-lg mt-4">
