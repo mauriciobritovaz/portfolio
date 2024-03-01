@@ -57,7 +57,7 @@ onBeforeMount(() =>{
       <div class="flex items-center py-3">
         <span class="rounded-full bg-orange-600 text-gray-200 flex justify-center items-center text-center p-5 h-12 w-12 text-2xl font-bold">M</span>
         <span class="text-lg lg:text-2xl font-semibold ml-3">
-          Maurício Brito Vaz {{ store.isDarkTheme }}
+          Maurício Brito Vaz
         </span>
       </div>
       <nav class="flex justify-end items-center">
