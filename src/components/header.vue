@@ -52,7 +52,7 @@ onBeforeMount(() =>{
 <template>
   <header
     :class="{'shadow-md bg-gray-300 dark:bg-gray-800 bg-opacity-85 backdrop-blur-sm': !isTop}"
-    class="font-inter text-gray-800 dark:text-gray-300 fixed w-full top-0 z-50 md:flex md:justify-between">
+    class="font-inter text-gray-900 dark:text-gray-300 fixed w-full top-0 z-50 md:flex md:justify-between">
     <div class="w-full px-5 md:px-10 lg:px-20 2xl:px-60 flex justify-between">
       <div class="flex items-center py-3">
         <span class="rounded-full bg-orange-600 text-gray-200 flex justify-center items-center text-center p-5 h-12 w-12 text-2xl font-bold">M</span>
