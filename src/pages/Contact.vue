@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
+// import { sendMessage } from '../plugins/firebase';
 import alertBox from '../components/alertBox.vue';
 
 const email = ref('')
@@ -13,35 +14,45 @@ const alertMessage = ref({
 })
 const showAlert = ref(false)
 
-const submitContact = () => {
-  const validationMsg = validateForm()
+const submitContact =  () => { // add async 
+  // await sendMessage({
+  //   email: email.value,
+  //   name: name.value,
+  //   message: message.value
+  // })
 
-  if(validationMsg === 1){
-    alertMessage.value = {
-      type: 'success',
-      title: 'Success!',
-      message: `The message was sent`,
-    }
-  }
-  else if(validationMsg === 2){
-    alertMessage.value = {
-      type: 'error',
-      title: 'Sorry',
-      message: 'Please, fill all the fields',
-    }
-  }
-  else if(validationMsg === 3){
-    alertMessage.value = {
-      type: 'error',
-      title: 'Sorry',
-      message: 'The e-mail is invalid',
-    }
-  }
+  email.value = ''
+  name.value = ''
+  message.value = ''  
 
-  showAlert.value = true
-  setTimeout(() => {
-    showAlert.value = false
-  }, 3000)
+  // const validationMsg = validateForm()
+
+  // if(validationMsg === 1){
+  //   alertMessage.value = {
+  //     type: 'success',
+  //     title: 'Success!',
+  //     message: `The message was sent`,
+  //   }
+  // }
+  // else if(validationMsg === 2){
+  //   alertMessage.value = {
+  //     type: 'error',
+  //     title: 'Sorry',
+  //     message: 'Please, fill all the fields',
+  //   }
+  // }
+  // else if(validationMsg === 3){
+  //   alertMessage.value = {
+  //     type: 'error',
+  //     title: 'Sorry',
+  //     message: 'The e-mail is invalid',
+  //   }
+  // }
+
+  // showAlert.value = true
+  // setTimeout(() => {
+  //   showAlert.value = false
+  // }, 3000)
 }
 
 const validateForm = () =>{
