@@ -1,6 +1,14 @@
 <script setup>
+import {onMounted} from 'vue'
 import headerComponent from './components/header.vue';
 import footerComponent from './components/footer.vue';
+
+import  { themeStore } from '@/store/themeStore'
+
+ /* DATA */
+const store = themeStore()
+
+onMounted(() => store.checkTheme())
 </script>
 
 <template>
