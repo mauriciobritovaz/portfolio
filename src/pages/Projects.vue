@@ -1,5 +1,13 @@
 <script setup>
+import { onMounted } from 'vue'
 import projectCard from '@/components/projects/projectCard.vue';
+import { projectsStore } from '../store/projectsStore';
+
+const store = projectsStore()
+
+onMounted(() => store.getProjects())
+
+
 
 import { projects } from '@/data/projects';
 
@@ -10,7 +18,7 @@ import { projects } from '@/data/projects';
 			<span class="text-4xl text-gray-900 dark:text-gray-300 font-inter font-bold">My Projects</span>
 		</div>
 		<div class="col-span-8 col-start-2 lg:col-span-6 lg:col-start-3 xl:col-span-4 xl:col-start-4">
-			<div v-for="project in projects" class="my-5">
+			<div v-for="project in store.projects" class="my-5">
 				<projectCard
 				:title="project.title"
 				:about="project.about"

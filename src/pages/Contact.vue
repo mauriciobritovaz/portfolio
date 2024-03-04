@@ -1,72 +1,76 @@
 <script setup>
 import { ref } from 'vue';
+import { collection, addDoc} from 'firebase/firestore'
+import { db } from '@/plugins/firebase'
 
-// import { sendMessage } from '../plugins/firebase';
-import alertBox from '../components/alertBox.vue';
 
 const email = ref('')
 const name = ref('')
 const message = ref('')
 const alertMessage = ref({
   type: '',
-  title: '',
   message: ''
 })
 const showAlert = ref(false)
 
 const submitContact =  () => { // add async 
-  // await sendMessage({
-  //   email: email.value,
-  //   name: name.value,
-  //   message: message.value
-  // })
 
-  email.value = ''
-  name.value = ''
-  message.value = ''  
+  const messageForm = {
+    email: email.value,
+    name: name.value,
+    message: message.value
+  }
+  
+  const validation = validateForm(messageForm)
 
-  // const validationMsg = validateForm()
+  if(validation.type === 'success'){
+    sendMessage(messageForm)
 
-  // if(validationMsg === 1){
-  //   alertMessage.value = {
-  //     type: 'success',
-  //     title: 'Success!',
-  //     message: `The message was sent`,
-  //   }
-  // }
-  // else if(validationMsg === 2){
-  //   alertMessage.value = {
-  //     type: 'error',
-  //     title: 'Sorry',
-  //     message: 'Please, fill all the fields',
-  //   }
-  // }
-  // else if(validationMsg === 3){
-  //   alertMessage.value = {
-  //     type: 'error',
-  //     title: 'Sorry',
-  //     message: 'The e-mail is invalid',
-  //   }
-  // }
+    email.value = ''
+    name.value = ''
+    message.value = ''  
+  }
 
-  // showAlert.value = true
-  // setTimeout(() => {
-  //   showAlert.value = false
-  // }, 3000)
+  alertMessage.value = validation
+  showAlert.value = true
+
+  setTimeout(() => {
+    showAlert.value = false
+    alertMessage.value = {}
+  }, 2000)
+
+
 }
 
-const validateForm = () =>{
+const validateForm = (messageForm) =>{
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-  if(email.value.length && name.value.length && message.value.length){
+  if(messageForm.email.length && messageForm.name.length && messageForm.message.length){
     if(emailRegex.test(email.value)){
-      return 1
+      return {
+        type: 'success',
+        message: 'Your message was sent.',
+      }
     }
     else{
-      return 3
+      return {
+      type: 'error',
+      message: 'E-mail is invalid',
+    }
     }
   }else
-    return 2
+    return {
+      type: 'error',
+      message: 'Please fill all the fields',
+    }
+}
+
+const sendMessage = async (messageForm) => {
+  await addDoc(collection(db, 'messages'), {
+    name: messageForm.name,
+    email: messageForm.email,
+    message: messageForm.message
+  })
 }
 </script>
 
@@ -112,7 +116,8 @@ const validateForm = () =>{
             class="bg-gray-500 text-gray-900 placeholder:text-gray-800 placeholder:font-semibold focus:outline-none p-2 resize-none"
           ></textarea>
         </div>
-        <div class="flex justify-end">
+        <div class="flex justify-between">
+          <span class="text-gray-800 font-semibold">{{ alertMessage.message }}</span>
           <button
             type="submit"
             class="bg-gray-400 py-2 px-4 text-lg uppercase font-semibold border-2 border-gray-800 text-gray-900 focus:outline-none">
@@ -120,12 +125,6 @@ const validateForm = () =>{
           </button>
         </div>
       </form>
-    </section>
-    
-    <alertBox
-      v-if="showAlert"
-      :title="alertMessage.title"
-      :type="alertMessage.type"
-      :message="alertMessage.message"/>
+    </section>    
   </div>
 </template>

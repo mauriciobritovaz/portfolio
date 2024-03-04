@@ -1,6 +1,5 @@
-import * as firebase from 'firebase/app'
-import 'firebase/firestore'
-import { ref, onUnmounted } from 'vue'
+import { initializeApp } from 'firebase/app'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
   apiKey: "AIzaSyChse_ILBpi-wn8L2ql1f7-XiGkS8Tq_VI",
@@ -13,25 +12,27 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
 // Initialize db firestore
-const db = app.firestore()
+const db = getFirestore(app)
 
-const messagesCollection = db.collection('messages')
-const projectsCollection = db.collection('projects')
+export { db }
 
-export const sendMessage = message => {
-  return messagesCollection.add(message)
-}
+// const messagesCollection = db.collection('messages')
+// const projectsCollection = db.collection('projects')
 
-export const getProjects = () => {
-  const projects = ref([])
-  const close = projectsCollection.onSnapshot(snapshot => {
-    projects.value = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
-  })
+// export const sendMessage = message => {
+//   return messagesCollection.add(message)
+// }
 
-  onUnmounted(close)
+// export const getProjects = () => {
+//   const projects = ref([])
+//   const close = projectsCollection.onSnapshot(snapshot => {
+//     projects.value = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}))
+//   })
 
-  return projects
-}
+//   onUnmounted(close)
+
+//   return projects
+// }
